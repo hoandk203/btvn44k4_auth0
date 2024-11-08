@@ -4,6 +4,7 @@ import App from './App.jsx'
 import { Auth0Provider } from '@auth0/auth0-react';
 import './index.css'
 import './output.css'
+import Provider from './core/Provider.jsx';
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
               redirect_uri: window.location.origin
           }}
       >
-          <App />
+          <Provider>
+            <App />
+          </Provider>
       </Auth0Provider>,
   /*</StrictMode>,*/
 )
